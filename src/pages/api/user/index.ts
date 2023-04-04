@@ -6,6 +6,7 @@ const mysql = require("mysql2/promise");
 interface User {
   ID_USER: number;
   WALLET_ADDRESS: string;
+  NICKNAME: string;
 }
 
 type JsonResponse = {
@@ -13,7 +14,7 @@ type JsonResponse = {
 };
 
 type ErrorResponse = {
-  message: String;
+  message: string;
 };
 
 interface ResponseWithData {
@@ -25,7 +26,7 @@ const config = {
   DATABASE_URL: process.env.DATABASE_URL,
 };
 
-async function getUsers(_walletAddress: String): Promise<ResponseWithData> {
+async function getUsers(_walletAddress: string): Promise<ResponseWithData> {
   const connection = await mysql.createConnection(config.DATABASE_URL);
 
   let query = "SELECT ID_USER, WALLET_ADDRESS, NICKNAME FROM `USER`";
