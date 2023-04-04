@@ -1,26 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 :root {
-/* =========== Project Colors ======== */
---navbar-background: #BF9A78;
---background-color: #F2F2F2;
---text-color: #262626;
---title-color: #732020;
---subtitle-color: #732020;
---details-color: #D94436;
+  /* =========== Project Colors ======== */
+  --navbar-background: #bf9a78;
+  --background-color: #f2f2f2;
+  --text-color: #262626;
+  --title-color: #732020;
+  --subtitle-color: #732020;
+  --details-color: #d94436;
 
-/* ============ Project Fonts ============= */
-
+  /* ============ Project Fonts ============= */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    
+body,
+html {
 }
-
