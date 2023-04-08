@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <ButtonMetamask/>
+      {/* <ButtonMetamask/> */}
     
       <Head>
         <title>To do List</title>
