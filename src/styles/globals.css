@@ -21,7 +21,7 @@
 
 body,
 html {
-    font-family: var(--body-font);
+    font-family: var(--opens-font);
     scroll-behavior: smooth;
 }
 
