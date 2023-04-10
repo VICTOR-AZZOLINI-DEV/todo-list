@@ -8,11 +8,22 @@
     font-family: var(--opens-font);
 }
 
+.logo {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.uil uil-bars icon {
+    font-size: 10px;
+}
+
 .navbar_logo_link{
     font-weight: 800;
     font-size: 1.3em;
     color: var(--title-color);
 }
+
 
 .navbar_list {
     display: flex;
