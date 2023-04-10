@@ -1,5 +1,5 @@
 import getConnection from "@/database/getConnection";
-import type { ResponseWithData, JsonResponse, User } from "@/interfaces";
+import type { ResponseWithData, User } from "@/interfaces";
 
 export default async function fetchUser(
   _walletAddress: string

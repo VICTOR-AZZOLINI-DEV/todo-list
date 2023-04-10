@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import fetchUser from "./fetchUser";
-import type { User } from "@/interfaces";
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,7 +7,6 @@ export default async function handler(
 ) {
   const { query, method } = req;
   const walletAddress = query.walletAddress as string;
-  console.log(walletAddress);
 
   if (method === "GET") {
     const { httpStatus, data } = await fetchUser(walletAddress);

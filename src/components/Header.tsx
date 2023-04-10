@@ -1,16 +1,33 @@
 import styles from "@/styles/Header.module.css"
+import { useWeb3Modal } from "@web3modal/react"
 import { useState } from "react"
+import { useAccount, useDisconnect } from "wagmi";
 
 export default function Header() {
-    const [connectWallet, setConnectWallet] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    function whenConnectWallet() {
-        setConnectWallet(!connectWallet)
+    const  { open } = useWeb3Modal();
+    const { isConnected } = useAccount();
+    const { disconnect } = useDisconnect();
+    const label = isConnected ? "Disconnect" : "Connect Custom";
+
+    async function whenConnectWallet() {
+        setLoading(true);
+        await open();
+        setLoading(false);
     }
+
+    function onClick() {
+        if (isConnected) {
+          disconnect();
+        } else {
+          whenConnectWallet();
+        }
+      }
 
     return (
         <>
-            {connectWallet ? (
+            {!isConnected ? (
                 <header className={styles.header}>
                     <div className={styles.logo}>
                         <i className="uil uil-bars icon"></i>
@@ -19,12 +36,9 @@ export default function Header() {
                     <nav>
                         <ul className={styles.navbar_list}>
                             <li>
-                                <button 
-                                    className={styles.navbar_list_button}
-                                    onClick={whenConnectWallet}
-                                >
-                                Conectar Carteira
-                                </button>
+                            <button onClick={onClick} disabled={loading}>
+                                {loading ? "Loading..." : label}
+                            </button>
                             </li>
                         </ul>
                     </nav>              
@@ -38,11 +52,8 @@ export default function Header() {
                         <ul>
                             <li className={styles.navbar_list}>
                                 <a href="/" className={styles.navbar_list_link}>DashBoard</a>
-                                <button
-                                    onClick={whenConnectWallet} 
-                                    className={styles.navbar_list_button}
-                                >
-                                    Desconectar Carteira
+                                <button onClick={onClick} disabled={loading}>
+                                    {loading ? "Loading..." : label}
                                 </button>
                             </li>
                         </ul>
@@ -53,6 +64,5 @@ export default function Header() {
         
     )
 }
-    
     
 
