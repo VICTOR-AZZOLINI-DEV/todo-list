@@ -1,6 +1,6 @@
 import getConnection from "@/database/getConnection";
 import { ResponseWithData } from "@/interfaces";
-import type { JsonResponse } from "@/interfaces";
+import type { UserArrayJsonResponse } from "@/interfaces";
 
 export default async function fetchAllUsers(): Promise<ResponseWithData> {
   const conn = await getConnection();
@@ -10,7 +10,7 @@ export default async function fetchAllUsers(): Promise<ResponseWithData> {
   try {
     const [rows, fields] = await conn.execute(query);
 
-    const jsonResponse: JsonResponse = {
+    const jsonResponse: UserArrayJsonResponse = {
       users: rows,
     };
 
