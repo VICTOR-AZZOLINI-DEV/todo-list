@@ -13,6 +13,7 @@ export default function Header() {
             {connectWallet ? (
                 <header className={styles.header}>
                     <div className={styles.logo}>
+                        <i className="uil uil-bars icon"></i>
                         <a href="/" className={styles.navbar_logo_link}>TODO LIST</a>
                     </div>
                     <nav>
