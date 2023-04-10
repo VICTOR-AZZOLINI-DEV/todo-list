@@ -36,7 +36,7 @@ export default function Header() {
                     <nav>
                         <ul className={styles.navbar_list}>
                             <li>
-                            <button onClick={onClick} disabled={loading}>
+                            <button onClick={onClick} disabled={loading} className={styles.navbar_list_button}>
                                 {loading ? "Loading..." : label}
                             </button>
                             </li>
@@ -52,7 +52,7 @@ export default function Header() {
                         <ul>
                             <li className={styles.navbar_list}>
                                 <a href="/" className={styles.navbar_list_link}>DashBoard</a>
-                                <button onClick={onClick} disabled={loading}>
+                                <button onClick={onClick} disabled={loading} className={styles.navbar_list_button}>
                                     {loading ? "Loading..." : label}
                                 </button>
                             </li>
