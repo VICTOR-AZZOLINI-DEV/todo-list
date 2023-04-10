@@ -10,6 +10,7 @@
   --details-color: #d94436;
 
   /* ============ Project Fonts ============= */
+  --opens-font: "Opens Sans", sans-serif;
 }
 
 * {
@@ -20,4 +21,36 @@
 
 body,
 html {
+    font-family: var(--body-font);
+    scroll-behavior: smooth;
 }
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 90vh;
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+

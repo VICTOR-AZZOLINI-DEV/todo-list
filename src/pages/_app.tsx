@@ -10,11 +10,9 @@ import { Web3Modal } from "@web3modal/react";
 import { useEffect, useState } from "react";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import {
-  celoAlfajores,
   goerli,
-
+  celoAlfajores,
 } from "wagmi/chains";
-// import "../styles.css";
 
 // 1. Get projectID at https://cloud.walletconnect.com
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
@@ -24,8 +22,8 @@ const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 
 // 2. Configure wagmi client
 const chains = [
-  celoAlfajores,
   goerli,
+  celoAlfajores,
 
 ];
 
