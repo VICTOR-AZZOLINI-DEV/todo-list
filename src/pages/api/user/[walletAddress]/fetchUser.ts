@@ -27,7 +27,6 @@ export default async function fetchUser(
 
     return { httpStatus: 200, data: user };
   } catch (exception) {
-    console.log(exception);
     return {
       httpStatus: 500,
       data: { message: "Internal Server Error. Wait a few minutes." },
